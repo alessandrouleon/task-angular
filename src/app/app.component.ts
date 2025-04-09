@@ -1,12 +1,27 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { DUMMY_USERS } from './dummy-users';
+import { HeaderComponent } from './header/header.component';
+import { TasksComponent } from "./tasks/tasks.component";
+import { UserComponent } from './user/user.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, HeaderComponent, UserComponent, TasksComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'teste-02';
+ users = DUMMY_USERS;
+
+ selectUserId = '0';
+
+ get selectUser() {
+  return this.users.find(user => user.id === this.selectUserId)!;
+ }
+
+ onSelectUser(id: string) {
+  this.selectUserId = id;
+ }
+
 }

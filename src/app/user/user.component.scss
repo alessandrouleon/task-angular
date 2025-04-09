@@ -1,0 +1,33 @@
+
+img {
+  width:2rem;
+  height: 2rem;
+  border-radius: 100%;
+  padding: 0.2rem;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  margin-left: 0rem;
+  cursor: pointer;
+  width: 100%;
+  padding: 0.5rem;
+  background-color: rgb(144, 90, 205);
+  border: none;
+  border-radius: 0.4rem;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgba(110, 52, 175, 0.7);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button span {
+  margin-left: 0.5rem;
+}
