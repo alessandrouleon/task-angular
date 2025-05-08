@@ -48,3 +48,11 @@ li {
   border-radius: 16px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
 }
+
+.task-card-empty {
+  flex: 1;
+  background-color: #79687e;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}

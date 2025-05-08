@@ -1,52 +1,29 @@
 <div class="container">
-
-
 <header>
   <app-header></app-header>
 </header>
-
-<main  class="main-layout">
- <ul id="users"  class="user-list">
-  <li>
-    <app-user
-    [id]="users[0].id"
-    [avatar]="users[0].avatar"
-     [name]="users[0].name"
-     (select)="onSelectUser($event)"
-     />
-  </li>
-  <li>
-    <app-user
-    [id]="users[1].id"
-    [avatar]="users[1].avatar"
-    [name]="users[1].name"
-    (select)="onSelectUser($event)"
-    />
-  </li>
-  <li>
-    <app-user
-    [id]="users[2].id"
-    [avatar]="users[2].avatar"
-    [name]="users[2].name"
-    (select)="onSelectUser($event)"
-
-    />
-  </li>
-  <li>
-    <app-user
-    [id]="users[3].id"
-    [avatar]="users[3].avatar"
-     [name]="users[3].name"
-     (select)="onSelectUser($event)"
-     />
-  </li>
- </ul>
-
- <div class="task-card">
-  <app-tasks [name]="selectUser.name"></app-tasks>
-</div>
+<main class="main-layout">
+  <ul id="users"  class="user-list">
+   @for (user of users; track user.id) {
+    <li>
+      <app-user
+       [id]="user.id"
+        [avatar]="user.avatar"
+        [name]="user.name"
+         (select)="onSelectUser($event)"
+         >
+        </app-user>
+      </li>
+   }
+  </ul>
+  @if (selectUser) {
+    <div class="task-card">
+      <app-tasks [name]="selectUser.name"></app-tasks>
+    </div>
+  } @else {
+    <p id="fallback"class="task-card-empty">No user selected</p>
+  }
 </main>
 </div>
-
 <router-outlet />
 
