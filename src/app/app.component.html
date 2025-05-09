@@ -1,7 +1,7 @@
-<div class="container">
-<header>
+
   <app-header></app-header>
-</header>
+
+<div class="container">
 <main class="main-layout">
   <ul id="users"  class="user-list">
    @for (user of users; track user.id) {
@@ -17,7 +17,7 @@
    }
   </ul>
   @if (selectUser) {
-    <div class="task-card">
+    <div class="task-card" >
       <app-tasks [name]="selectUser.name"></app-tasks>
     </div>
   } @else {
