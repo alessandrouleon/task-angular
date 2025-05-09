@@ -16,9 +16,6 @@ export class AppComponent {
 
   selectUserId = '';
 
-  //  get selectUser() {
-  //   return this.users.find(user => user.id === this.selectUserId)!;
-  //  }
   get selectUser() {
     return this.users.find((user) => user.id === this.selectUserId);
   }

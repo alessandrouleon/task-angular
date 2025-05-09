@@ -1,6 +1,5 @@
-
 img {
-  width:2rem;
+  width: 2rem;
   height: 2rem;
   border-radius: 100%;
   padding: 0.2rem;
@@ -13,11 +12,12 @@ button {
   cursor: pointer;
   width: 100%;
   padding: 0.5rem;
-  background-color: rgb(144, 90, 205);
+  background-color: #322053;
   border: none;
   border-radius: 0.4rem;
   transition: background-color 0.3s ease;
   font-size: 1rem;
+  color: #ffffff;
   cursor: pointer;
 }
 
@@ -30,4 +30,17 @@ button:hover {
 
 button span {
   margin-left: 0.5rem;
+}
+
+button.active {
+  background-color: rgb(100, 32, 184);
+  color: white;
+}
+
+button.active img {
+  border: 1px solid rgb(177, 168, 168);
+}
+
+button.active span {
+  font-weight: bold;
 }
