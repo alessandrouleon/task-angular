@@ -5,8 +5,8 @@ interface User {
 }
 
 export const DUMMY_USERS: User[] = [
-  { id: "0", name: 'John Doe' , avatar: 'user1.jpg' },
-  { id:"1", name: 'Ana Doe' , avatar: 'user3.png' },
-  { id: "2", name: 'Fernando alves' , avatar: 'user4.png' },
-  { id: "3", name: 'Carlos Pereira' , avatar: 'user2.jpg' },
+  { id: 'u0', name: 'John Doe', avatar: 'user1.jpg' },
+  { id: 'u1', name: 'Ana Doe', avatar: 'user3.png' },
+  { id: 'u2', name: 'Fernando alves', avatar: 'user4.png' },
+  { id: 'u3', name: 'Carlos Pereira', avatar: 'user2.jpg' },
 ];
