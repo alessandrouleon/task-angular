@@ -5,3 +5,9 @@ export interface Task {
   sumary: string;
   dueDate: string;
 }
+
+export interface NewTeskDate {
+  title: string;
+  summary: string;
+  date: string;
+}

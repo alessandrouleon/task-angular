@@ -1,16 +1,18 @@
 import { Component, Input } from '@angular/core';
+import { NewTaskComponent } from "./new-task/new-task.component";
 import { TaskComponent } from './task/task.component';
-import { Task } from './task/task.model';
+import { type NewTeskDate, Task } from './task/task.model';
 
 @Component({
   selector: 'app-tasks',
-  imports: [TaskComponent],
+  imports: [TaskComponent, NewTaskComponent],
   templateUrl: './tasks.component.html',
   styleUrl: './tasks.component.scss',
 })
 export class TasksComponent {
   @Input({ required: true }) userId!: string;
   @Input({ required: true }) name!: string;
+  isAddingTask: boolean = false;
 
   tasks: Task[] = [
     {
@@ -47,5 +49,25 @@ export class TasksComponent {
   }
   onCompleteTask(id: string) {
     this.tasks = this.tasks.filter((task) => task.id !== id);
+  }
+
+  onStartAddTask() {
+    this.isAddingTask = true;
+  }
+
+  onCancekAddTask() {
+    this.isAddingTask = false;
+  }
+
+  onAddTask(taskData: NewTeskDate) {
+    this.tasks.push({
+      id: Math.random().toString(),
+      userId: this.userId,
+      title: taskData.title,
+      sumary: taskData.summary,
+      dueDate: taskData.date,
+    });
+    this.isAddingTask = false;
+
   }
 }
