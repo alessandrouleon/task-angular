@@ -35,7 +35,7 @@ export class TasksComponent {
   }
 
   onAddTask(taskData: NewTeskDate) {
-
+    this.tasksService.addTasks(taskData, this.userId);
     this.isAddingTask = false;
 
   }
